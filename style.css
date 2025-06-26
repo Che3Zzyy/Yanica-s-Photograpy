@@ -83,11 +83,7 @@ section {
   overflow: hidden;
 }
 
-.slides {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: 3200px; /* 4 slides * 800px */
-}
+
 
 .slides img {
   width: 800px;
@@ -198,7 +194,7 @@ footer {
   form {
     padding: 0 10px;
   }
-}
+
 .slides {
   display: flex;
   transition: transform 0.5s ease;
