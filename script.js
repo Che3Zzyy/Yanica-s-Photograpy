@@ -5,22 +5,6 @@ document.getElementById("toggleDarkMode").addEventListener("click", function () 
 });
 
 // Slider
-let slideIndex = 0;
-const slides = document.querySelector(".slides");
-const totalSlides = slides.children.length;
-
-function showSlide(index) {
-  const slideWidth = slides.children[0].clientWidth;
-  slides.style.transform = `translateX(-${index * slideWidth}px)`;
-}
-
-document.querySelector(".next").addEventListener("click", () => {
-  slideIndex = (slideIndex + 1) % totalSlides;
-  showSlide(slideIndex);
-});
-
-document.querySelector()
-
 let currentSlide = 0;
 const slides = document.querySelector('.slides');
 const slideImages = document.querySelectorAll('.slides img');
@@ -37,5 +21,5 @@ document.querySelector('.prev').addEventListener('click', () => {
 });
 
 function updateSlidePosition() {
-  slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+  slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
 }
