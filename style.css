@@ -136,7 +136,14 @@ form button {
   border: none;
   cursor: pointer;
 }
+.price-list {
+  padding-left: 30px; /* 👈 Moves bullets & text to the right */
+  list-style-position: outside; /* Keeps bullets outside the text box */
+}
 
+.price-list li {
+  margin-bottom: 8px; /* Optional: adds spacing between items */
+}
 footer {
   text-align: center;
   padding: 20px;
