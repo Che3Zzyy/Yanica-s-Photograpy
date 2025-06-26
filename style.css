@@ -144,3 +144,58 @@ footer {
   background: var(--header-bg);
   color: white;
 }
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 850px) {
+  /* Gallery Slider */
+  .slides {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .slides img {
+    width: 100vw;
+    height: auto;
+  }
+
+  /* Adjust slider buttons */
+  .prev, .next {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 15px 10px;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  #toggleDarkMode {
+    position: static;
+    margin-top: 10px;
+  }
+
+  #hero {
+    padding: 80px 15px;
+    font-size: 1rem;
+    background-size: cover;
+  }
+
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  form {
+    padding: 0 10px;
+  }
+}
