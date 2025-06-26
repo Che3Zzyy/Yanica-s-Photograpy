@@ -199,3 +199,8 @@ footer {
     padding: 0 10px;
   }
 }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
