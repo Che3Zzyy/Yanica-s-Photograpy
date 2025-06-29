@@ -87,12 +87,14 @@ section {
 
 
 .slides img {
-  width: 100vw;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  flex-shrink: 0;
+  flex: 0 0 100%;
+  width: 100%;
+  max-height: 400px; /* 👈 adjust this as needed */
+  object-fit: contain; /* 👈 shows entire image */
+  display: block;
+  margin: auto;
 }
+
 
 
 .prev, .next {
