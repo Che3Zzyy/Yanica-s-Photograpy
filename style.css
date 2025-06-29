@@ -8,12 +8,6 @@
 }
 
 body.dark-mode {
-  --bg-color: #121212;
-  --text-color: #eaeaea;
-  --header-bg: #1f1f1f;
-  --accent: #555;
-  --button-bg: #eee;
-  --button-text: #111;
 }
 
 * {
