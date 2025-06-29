@@ -1,14 +1,13 @@
 :root {
-  --bg-color: #f4f4f4;
-  --text-color: #333;
-  --header-bg: #222;
-  --accent: #444;
-  --button-bg: #333;
-  --button-text: #fff;
+  --bg-color: #121212;
+  --text-color: #eaeaea;
+  --header-bg: #1f1f1f;
+  --accent: #555;
+  --button-bg: #eee;
+  --button-text: #111;
 }
 
-body.dark-mode {
-}
+
 
 * {
   box-sizing: border-box;
@@ -122,9 +121,10 @@ form input, form textarea {
   margin-bottom: 10px;
   border: 1px solid var(--accent);
   border-radius: 5px;
-  background: white;
-  color: black;
+  background: #2a2a2a;
+  color: var(--text-color);
 }
+
 
 form button {
   padding: 10px;
