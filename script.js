@@ -1,14 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Dark mode toggle
-  const darkModeToggle = document.getElementById("toggleDarkMode");
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", function () {
-      document.body.classList.toggle("dark-mode");
-      this.textContent = document.body.classList.contains("dark-mode")
-        ? "☀️ Light Mode"
-        : "🌙 Dark Mode";
-    });
-  }
+ 
 
   // Slider logic
   let currentSlide = 0;
