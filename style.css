@@ -37,7 +37,7 @@ header::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  background: rgba(0, 0, 0, 0.4);
   z-index: 0;
 }
 
@@ -142,31 +142,58 @@ section {
   right: 10px;
 }
 
+/* ✅ Contact Form Styling */
 form {
-  max-width: 500px;
-  margin: auto;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
 }
 
 form input,
 form textarea {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
   border: 1px solid var(--accent);
-  border-radius: 5px;
+  border-radius: 6px;
   background: #2a2a2a;
   color: var(--text-color);
+  font-size: 1rem;
+  resize: vertical;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #888;
 }
 
 form button {
-  padding: 10px;
   background: var(--button-bg);
   color: var(--button-text);
+  padding: 12px;
   border: none;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
+form button:hover {
+  background: #ccc;
+  color: #111;
+}
+
+/* ✅ Price list styling */
 .price-list {
   padding-left: 30px;
   list-style-position: outside;
