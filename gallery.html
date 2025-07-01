@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery | Yanica's Photography</title>
   <link rel="icon" href="images/favicon1.png" type="image/png" />
   <link rel="shortcut icon" href="images/favicon1.png" type="image/png" />
@@ -12,11 +12,12 @@
 <body>
 
   <header>
+    <img src="images/NEWLOGO.png" alt="Yanica's Logo" class="logo" />
     <h1>Gallery</h1>
-    <img src="images/NEWLOGO.png" alt="Yanica's Logo" class="logo" height="100"/>
+
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#hero">Home</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#contact">Contact</a></li>
@@ -24,26 +25,27 @@
     </nav>
   </header>
 
-  <!-- ✅ Birthday Section -->
+  <!-- Birthday Shoots -->
   <section id="birthday">
     <h2>Birthday Shoots</h2>
     <div class="slider">
-      <button class="prev">&#10094;</button>
+      <button class="prev" aria-label="Previous slide">&#10094;</button>
       <div class="slides-container">
         <div class="slides">
           <img src="images/birthday1.jpg" alt="Birthday 1" />
           <img src="images/birthday2.jpg" alt="Birthday 2" />
+          <!-- Add more birthday images here if needed -->
         </div>
       </div>
-      <button class="next">&#10095;</button>
+      <button class="next" aria-label="Next slide">&#10095;</button>
     </div>
   </section>
 
-  <!-- ✅ Couple Section -->
+  <!-- Couple Shoots -->
   <section id="couple">
     <h2>Couple Shoots</h2>
     <div class="slider">
-      <button class="prev">&#10094;</button>
+      <button class="prev" aria-label="Previous slide">&#10094;</button>
       <div class="slides-container">
         <div class="slides">
           <img src="images/couple1.JPG" alt="Couple 1" />
@@ -82,7 +84,7 @@
           <img src="images/couple34.JPG" alt="Couple 34" />
         </div>
       </div>
-      <button class="next">&#10095;</button>
+      <button class="next" aria-label="Next slide">&#10095;</button>
     </div>
   </section>
 
@@ -90,6 +92,6 @@
     <p>&copy; 2025 Yanica's Photography</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="gallery-script.js"></script>
 </body>
 </html>
