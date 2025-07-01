@@ -1,35 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Example main page JS — add more if you want
-  // (e.g. dark mode toggle, animations, etc.)
-  // ---
-
-  // Gallery slider code — runs only if sliders are present
   const sliders = document.querySelectorAll('.slider');
-  if (sliders.length > 0) {
-    sliders.forEach(slider => {
-      const slides = slider.querySelector('.slides');
-      const images = slides.querySelectorAll('img');
-      const btnNext = slider.querySelector('.next');
-      const btnPrev = slider.querySelector('.prev');
-      let currentIndex = 0;
 
-      function updateSlider() {
-        const slideWidth = slider.querySelector('.slides-container').clientWidth;
-        slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-      }
+  sliders.forEach(slider => {
+    const slides = slider.querySelector('.slides');
+    const images = slides.querySelectorAll('img');
+    const btnNext = slider.querySelector('.next');
+    const btnPrev = slider.querySelector('.prev');
+    let currentIndex = 0;
 
-      btnNext.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateSlider();
-      });
+    function updateSlider() {
+      const slideWidth = images[0].clientWidth + 15; // +15 is gap between slides
+      slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    }
 
-      btnPrev.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateSlider();
-      });
-
-      window.addEventListener('resize', updateSlider);
+    btnNext.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
       updateSlider();
     });
-  }
+
+    btnPrev.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateSlider();
+    });
+
+    // On window resize, adjust slider position so it stays consistent
+    window.addEventListener('resize', updateSlider);
+
+    updateSlider();
+  });
 });
