@@ -1,32 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let currentSlide = 0;
-  const slides = document.querySelector('.slides');
-  const slideImages = document.querySelectorAll('.slides img');
-  const nextBtn = document.querySelector('.next');
-  const prevBtn = document.querySelector('.prev');
-  const totalSlides = slideImages.length;
+  const sliders = document.querySelectorAll('.slider');
 
-  function updateSlidePosition() {
-    const slideWidth = slideImages[0].clientWidth;
-    slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-  }
+  sliders.forEach((slider) => {
+    let currentSlide = 0;
+    const slidesContainer = slider.querySelector('.slides');
+    const slideImages = slidesContainer.querySelectorAll('img');
+    const nextBtn = slider.querySelector('.next');
+    const prevBtn = slider.querySelector('.prev');
+    const totalSlides = slideImages.length;
 
-  if (nextBtn && prevBtn && slides && totalSlides > 0) {
-    nextBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlidePosition();
-    });
+    function updateSlidePosition() {
+      const slideWidth = slideImages[0].clientWidth;
+      slidesContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
 
-    prevBtn.addEventListener('click', () => {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSlidePosition();
-    });
+    if (nextBtn && prevBtn && slidesContainer && totalSlides > 0) {
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+      });
 
-    window.addEventListener('resize', updateSlidePosition);
-  }
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      });
 
-  // Ensure images are loaded before calculating width
-  window.addEventListener('load', () => {
-    updateSlidePosition();
+      window.addEventListener('resize', updateSlidePosition);
+
+      // Initial slide position after images load
+      window.addEventListener('load', updateSlidePosition);
+    }
   });
 });
