@@ -14,19 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
     }
 
-    function goToNextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateSlidePosition();
-    }
-
-    function goToPrevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateSlidePosition();
-    }
-
     if (nextBtn && prevBtn && slidesContainer && totalSlides > 0) {
-      nextBtn.addEventListener('click', goToNextSlide);
-      prevBtn.addEventListener('click', goToPrevSlide);
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlidePosition();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      });
+
       window.addEventListener('resize', updateSlidePosition);
       window.addEventListener('load', updateSlidePosition);
     }
