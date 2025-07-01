@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
- 
-
-  // Slider logic
   let currentSlide = 0;
   const slides = document.querySelector('.slides');
   const slideImages = document.querySelectorAll('.slides img');
@@ -21,12 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     prevBtn.addEventListener('click', () => {
-      console.log('Prev button clicked'); // Debug log to confirm click
       currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
       updateSlidePosition();
     });
 
     window.addEventListener('resize', updateSlidePosition);
-    updateSlidePosition();
   }
+
+  // Ensure images are loaded before calculating width
+  window.addEventListener('load', () => {
+    updateSlidePosition();
+  });
 });
