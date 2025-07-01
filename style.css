@@ -7,6 +7,7 @@
   --button-text: #111;
 }
 
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,11 +21,11 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER */
+/* Header styling */
 header {
   background: url("images/59a84d6f-30fa-4e57-9684-8653205a90ab.jpg") no-repeat center center/cover;
   color: white;
-  padding: 100px 20px;
+  padding: 60px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -40,24 +41,15 @@ header::before {
 }
 
 header h1,
-header h2,
-header p,
 header nav,
-#toggleDarkMode {
+.logo {
   position: relative;
   z-index: 1;
 }
 
-#toggleDarkMode {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
+.logo {
+  max-height: 100px;
+  margin-bottom: 10px;
 }
 
 header nav ul {
@@ -65,25 +57,23 @@ header nav ul {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-}
-
-header nav ul li {
-  margin: 0 15px;
+  gap: 25px;
 }
 
 header nav ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
-/* SECTIONS */
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Sections */
 section {
   padding: 40px 20px;
-}
-
-#hero {
-  text-align: center;
-  color: var(--text-color);
 }
 
 #about, #contact {
@@ -92,25 +82,31 @@ section {
   margin: 30px 0;
 }
 
-/* SLIDER */
+/* Center info image */
+img[alt="info sheet"] {
+  display: block;
+  margin: 30px auto;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Gallery Slider */
 .slider {
   position: relative;
   max-width: 100%;
-  margin: 20px auto 50px auto;
+  margin: 30px auto 50px auto;
   background: #181818;
   border-radius: 10px;
   padding: 20px;
   overflow: hidden;
 }
 
-/* Container hides overflow */
 .slides-container {
   overflow: hidden;
   width: 100%;
-  position: relative;
 }
 
-/* Flex container for slides */
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -118,18 +114,17 @@ section {
   gap: 15px;
 }
 
-/* Images sized to fill container width - one visible at a time */
 .slides img {
   min-width: 100%;
   max-width: 100%;
   object-fit: contain;
   border-radius: 10px;
   border: 4px solid white;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
 }
 
-/* Slider navigation buttons */
+/* Slider Buttons */
 .slider button.prev,
 .slider button.next {
   position: absolute;
@@ -160,7 +155,7 @@ section {
   right: 10px;
 }
 
-/* CONTACT FORM */
+/* Contact Form */
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -211,7 +206,7 @@ form button:hover {
   color: #111;
 }
 
-/* FOOTER */
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -219,7 +214,7 @@ footer {
   color: white;
 }
 
-/* CATEGORY SECTIONS */
+/* Category Blocks */
 #birthday,
 #couple {
   background: #181818;
@@ -228,21 +223,23 @@ footer {
   padding: 40px 20px;
 }
 
-/* RESPONSIVE */
+/* Responsive */
 @media (max-width: 850px) {
   .slides img {
-    max-height: 250px;
+    min-width: 100vw;
+    max-width: 100vw;
   }
+
   .slider button.prev,
   .slider button.next {
     font-size: 18px;
-    padding: 10px 14px;
+    padding: 8px;
   }
 }
 
 @media (max-width: 600px) {
   header {
-    padding: 15px 10px;
+    padding: 40px 10px;
   }
 
   header nav ul {
@@ -251,19 +248,9 @@ footer {
     margin-top: 10px;
   }
 
-  #toggleDarkMode {
-    position: static;
-    margin-top: 10px;
-  }
-
-  #hero {
-    padding: 80px 15px;
-    font-size: 1rem;
-    background-size: cover;
-  }
-
-  #hero h2 {
-    font-size: 1.5rem;
+  .logo {
+    max-height: 80px;
+    margin-bottom: 5px;
   }
 
   section {
@@ -272,9 +259,5 @@ footer {
 
   form {
     padding: 0 10px;
-  }
-
-  .slides img {
-    max-height: 180px;
   }
 }
