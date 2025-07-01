@@ -20,6 +20,13 @@ body {
   line-height: 1.6;
 }
 
+/* ✅ Base Image Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ✅ HEADER */
 header {
   background: url("images/59a84d6f-30fa-4e57-9684-8653205a90ab.jpg") no-repeat center center/cover;
@@ -44,22 +51,9 @@ header::before {
 header h1,
 header h2,
 header p,
-header nav,
-#toggleDarkMode {
+header nav {
   position: relative;
   z-index: 1;
-}
-
-#toggleDarkMode {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: var(--button-bg);
-  color: var(--button-text);
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 5px;
 }
 
 header nav ul {
@@ -67,6 +61,7 @@ header nav ul {
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -83,15 +78,19 @@ section {
   padding: 40px 20px;
 }
 
-#hero {
-  text-align: center;
-  color: var(--text-color);
-}
-
 #about, #contact {
   background: #1c1c1c;
   border-radius: 10px;
   margin: 30px 0;
+}
+
+/* ✅ Category Styling */
+#birthday,
+#couple {
+  background: #181818;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 40px 20px;
 }
 
 /* ✅ Gallery Slider */
@@ -113,16 +112,19 @@ section {
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  align-items: center;
 }
 
 .slides img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   flex-shrink: 0;
   border-radius: 10px;
   border: 4px solid white;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  max-height: 400px;
-  object-fit: cover;
+  object-fit: contain;
+  max-height: 90vh;
+  margin: 0 auto;
 }
 
 /* ✅ Slider Buttons */
@@ -156,57 +158,6 @@ section {
   right: 10px;
 }
 
-/* ✅ Contact Form */
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background: #1f1f1f;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-form label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: var(--text-color);
-}
-
-form input,
-form textarea {
-  padding: 12px;
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  background: #2a2a2a;
-  color: var(--text-color);
-  font-size: 1rem;
-  resize: vertical;
-}
-
-form input::placeholder,
-form textarea::placeholder {
-  color: #888;
-}
-
-form button {
-  background: var(--button-bg);
-  color: var(--button-text);
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background: #ccc;
-  color: #111;
-}
-
 /* ✅ Footer */
 footer {
   text-align: center;
@@ -215,20 +166,12 @@ footer {
   color: white;
 }
 
-/* ✅ Category Blocks */
-#birthday,
-#couple {
-  background: #181818;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  padding: 40px 20px;
-}
-
 /* ✅ Responsive */
 @media (max-width: 850px) {
   .slides img {
-    width: 100vw;
+    width: 100%;
     height: auto;
+    max-height: 80vh;
   }
 
   .slider button.prev,
@@ -249,26 +192,7 @@ footer {
     margin-top: 10px;
   }
 
-  #toggleDarkMode {
-    position: static;
-    margin-top: 10px;
-  }
-
-  #hero {
-    padding: 80px 15px;
-    font-size: 1rem;
-    background-size: cover;
-  }
-
-  #hero h2 {
-    font-size: 1.5rem;
-  }
-
   section {
     padding: 30px 15px;
-  }
-
-  form {
-    padding: 0 10px;
   }
 }
