@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = slider.querySelector('.slides-container').clientWidth;
+      const slideWidth = images[0].clientWidth + 15; // +15 is gap between slides
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     });
 
+    // On window resize, adjust slider position so it stays consistent
     window.addEventListener('resize', updateSlider);
 
     updateSlider();
