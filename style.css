@@ -20,12 +20,34 @@ body {
   line-height: 1.6;
 }
 
+/* ✅ HEADER with your image as background */
 header {
-  background: var(--header-bg);
+  background: url("images/59a84d6f-30fa-4e57-9684-8653205a90ab.jpg") no-repeat center center/cover;
   color: white;
-  padding: 20px;
+  padding: 100px 20px;
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay */
+  z-index: 0;
+}
+
+header h1,
+header h2,
+header p,
+header nav,
+#toggleDarkMode {
+  position: relative;
+  z-index: 1;
 }
 
 #toggleDarkMode {
@@ -59,7 +81,6 @@ header nav ul li a {
 #hero {
   padding: 100px 20px;
   text-align: center;
-  background: var(--bg-color);
   color: var(--text-color);
 }
 
@@ -88,10 +109,10 @@ section {
   object-fit: contain;
   display: block;
   margin: auto;
-  position: relative; /* ✅ fix layering */
+  position: relative;
 }
 
-/* ✅ Fixed slider button stacking and style */
+/* ✅ Fixed slider buttons */
 .prev,
 .next {
   position: absolute;
@@ -103,7 +124,7 @@ section {
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
-  z-index: 10; /* ✅ ensures buttons are clickable */
+  z-index: 10;
   opacity: 0.8;
   transition: opacity 0.2s ease;
 }
