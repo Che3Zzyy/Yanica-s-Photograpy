@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yanica's Portfolio</title>
-  
+
   <link rel="icon" href="images/favicon1.png" type="image/png" />
   <link rel="shortcut icon" href="images/favicon1.png" type="image/png" />
   <link rel="apple-touch-icon" href="images/apple-icon.png" />
@@ -47,26 +45,43 @@
       <button class="next">&#10095;</button>
     </div>
   </section>
-  
- 
+
   <section id="about">
     <h2>About Me</h2>
     <p>Hello! I'm Yanica, a passionate photographer based in Uitenhage. I specialize in portraits, events, weddings and couple shoots. My goal is to tell stories through powerful and compelling imagery.</p>
   </section>
 
   <section id="contact">
-
-    
-    <h2>Contact Me</h2>
+    <h2>Get in Touch</h2>
+    <p>Please fill in the form below and I’ll get back to you as soon as I can!</p>
     <br>
-    
-  <a href="https://wa.me/27747706463" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: inherit;">
-  <img src="https://img.icons8.com/ios-filled/24/25D366/whatsapp.png" alt="WhatsApp" style="margin-right: 8px;" />
-  Message me on WhatsApp
-</a>
 
+    <form action="https://formsubmit.co/yanicadelange25@gmail.com" method="POST" style="max-width: 600px; margin: auto;">
+      <label for="name">Name (required)</label><br>
+      <input type="text" id="name" name="name" required><br><br>
 
-    
+      <label for="email">Email Address (required)</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="subject">Subject (required)</label><br>
+      <input type="text" id="subject" name="subject" required><br><br>
+
+      <label for="message">Message (required)</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yanica.co.za/thankyou.html">
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <br><br>
+    <h2>Contact Me</h2>
+
+    <a href="https://wa.me/27747706463" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; color: inherit;">
+      <img src="https://img.icons8.com/ios-filled/24/25D366/whatsapp.png" alt="WhatsApp" style="margin-right: 8px;" />
+      Message me on WhatsApp
+    </a>
   </section>
 
   <footer>
