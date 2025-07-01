@@ -210,6 +210,15 @@ footer {
   color: white;
 }
 
+/* New gallery categories styling */
+#birthday,
+#couple {
+  background: #181818;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 40px 20px;
+}
+
 /* ✅ Responsive Design */
 @media (max-width: 850px) {
   .slides {
