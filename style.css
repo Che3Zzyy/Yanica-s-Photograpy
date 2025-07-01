@@ -1,4 +1,3 @@
-/* === ROOT & RESET === */
 :root {
   --bg-color: #121212;
   --text-color: #eaeaea;
@@ -15,30 +14,20 @@
   font-family: Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  min-height: 100vh;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
-  position: relative;
   background: url("images/59a84d6f-30fa-4e57-9684-8653205a90ab.jpg") no-repeat center center/cover;
   color: white;
-  padding: 40px 20px;
+  padding: 100px 20px;
   text-align: center;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
 }
 
 header::before {
@@ -51,157 +40,175 @@ header::before {
 }
 
 header h1,
-header img,
-header nav {
+header h2,
+header p,
+header nav,
+#toggleDarkMode {
   position: relative;
   z-index: 1;
 }
 
-header .logo {
-  max-height: 80px;
-  width: auto;
-  display: block;
-  margin: 0 auto;
+#toggleDarkMode {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-/* Nav styles */
 header nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-top: 10px;
+  margin-top: 15px;
+}
+
+header nav ul li {
+  margin: 0 15px;
 }
 
 header nav ul li a {
   color: white;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
 }
 
-header nav ul li a:hover {
-  color: var(--accent);
-}
-
-/* === SECTIONS === */
+/* SECTIONS */
 section {
   padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto 50px auto;
 }
 
-/* HERO */
 #hero {
   text-align: center;
+  color: var(--text-color);
 }
 
-#hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-#hero p {
-  font-size: 1.2rem;
-  color: #ccc;
-}
-
-/* ABOUT */
-#about p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* INFO IMAGE */
-img[alt="info sheet"] {
-  display: block;
-  margin: 40px auto;
-  max-width: 90%;
-  height: auto;
+#about, #contact {
+  background: #1c1c1c;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  margin: 30px 0;
+}
+
+/* SLIDER */
+.slider {
+  position: relative;
+  max-width: 100%;
+  margin: 20px auto 50px auto;
+  background: #181818;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Container hides overflow */
+.slides-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Flex container for slides */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+  gap: 15px;
+}
+
+/* Images sized to fill container width - one visible at a time */
+.slides img {
+  min-width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 4px solid white;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  flex-shrink: 0;
+}
+
+/* Slider navigation buttons */
+.slider button.prev,
+.slider button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 12px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.8;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.slider button.prev:hover,
+.slider button.next:hover {
+  opacity: 1;
+}
+
+.slider button.prev {
+  left: 10px;
+}
+
+.slider button.next {
+  right: 10px;
 }
 
 /* CONTACT FORM */
 form {
   max-width: 600px;
   margin: 0 auto;
-  background: #222;
-  padding: 30px 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+  padding: 20px;
+  background: #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 form label {
-  font-weight: 600;
-  color: #eee;
-  font-size: 1.05rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--text-color);
 }
 
 form input,
 form textarea {
-  padding: 14px 18px;
+  padding: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: var(--text-color);
   font-size: 1rem;
-  border-radius: 8px;
-  border: none;
-  background: #333;
-  color: #eee;
-  box-shadow: inset 0 0 6px #111;
-  transition: box-shadow 0.3s ease;
+  resize: vertical;
 }
 
-form input:focus,
-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 8px 2px #25d366; /* WhatsApp green accent */
+form input::placeholder,
+form textarea::placeholder {
+  color: #888;
 }
 
 form button {
-  padding: 15px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  background: #25d366;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px;
   border: none;
-  border-radius: 12px;
-  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 5px 12px rgba(37,211,102,0.7);
   transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: #1da851;
-  box-shadow: 0 6px 14px rgba(29,168,81,0.9);
-}
-
-/* WhatsApp link */
-#contact a {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 10px;
-  transition: color 0.3s ease;
-}
-
-#contact a img {
-  margin-right: 8px;
-}
-
-#contact a:hover {
-  color: #25d366;
+  background: #ccc;
+  color: #111;
 }
 
 /* FOOTER */
@@ -212,24 +219,30 @@ footer {
   color: white;
 }
 
+/* CATEGORY SECTIONS */
+#birthday,
+#couple {
+  background: #181818;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 40px 20px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 850px) {
-  section {
-    max-width: 90%;
+  .slides img {
+    max-height: 250px;
   }
-
-  header nav ul {
-    gap: 20px;
+  .slider button.prev,
+  .slider button.next {
+    font-size: 18px;
+    padding: 10px 14px;
   }
 }
 
 @media (max-width: 600px) {
   header {
-    padding: 20px 10px;
-  }
-
-  header h1 {
-    font-size: 2rem;
+    padding: 15px 10px;
   }
 
   header nav ul {
@@ -238,12 +251,30 @@ footer {
     margin-top: 10px;
   }
 
+  #toggleDarkMode {
+    position: static;
+    margin-top: 10px;
+  }
+
+  #hero {
+    padding: 80px 15px;
+    font-size: 1rem;
+    background-size: cover;
+  }
+
+  #hero h2 {
+    font-size: 1.5rem;
+  }
+
   section {
     padding: 30px 15px;
   }
 
   form {
-    max-width: 100%;
-    padding: 20px 15px;
+    padding: 0 10px;
+  }
+
+  .slides img {
+    max-height: 180px;
   }
 }
