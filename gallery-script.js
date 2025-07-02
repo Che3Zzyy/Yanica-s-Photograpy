@@ -1,5 +1,3 @@
-// gallery-script.js - Slider functionality for gallery page
-
 document.addEventListener('DOMContentLoaded', () => {
   const sliders = document.querySelectorAll('.slider');
 
@@ -11,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = images[0].clientWidth + 15; // +15 accounts for gap between slides
+      const slideWidth = images[0].clientWidth + 20; // Includes margin between images
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
@@ -25,9 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     });
 
-    // Keep slider position consistent on window resize
     window.addEventListener('resize', updateSlider);
-
     updateSlider();
   });
 });
