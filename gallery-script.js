@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = images[0].clientWidth + 15; 
-      // Added 15px gap to account for space between images (if gap is in CSS)
+      const slideWidth = images[0].clientWidth + 15; // Adjust if gap differs
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
@@ -26,5 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateSlider);
     updateSlider();
+
+    // === Touch support for mobile ===
+    let startX = 0;
+    let endX = 0;
+
+    slides.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    slides.addEventListener('touchend', e => {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const swipeDistance = endX - startX;
+      if (swipeDistance > 50) {
+        // Swipe right
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+      } else if (swipeDistance < -50) {
+        // Swipe left
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+      }
+    }
   });
 });
