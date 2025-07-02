@@ -90,18 +90,18 @@ header nav ul li a:hover {
   color: var(--accent);
 }
 
-/* === SECTIONS === */
-section {
-  padding: 40px 20px;
+/* === SECTION BOX STYLING === */
+.section-box {
+  background: #181818;
+  padding: 40px 25px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
   max-width: 900px;
-  margin: 0 auto 50px auto;
-}
-
-/* HERO */
-#hero {
+  margin: 40px auto;
   text-align: center;
 }
 
+/* HERO */
 #hero h2 {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -119,9 +119,9 @@ section {
 }
 
 /* INFO IMAGE */
-img[alt="info sheet"] {
+.info-image {
   display: block;
-  margin: 40px auto;
+  margin: 20px auto;
   max-width: 90%;
   height: auto;
   border-radius: 10px;
@@ -191,7 +191,7 @@ form button:hover {
   color: inherit;
   font-weight: 600;
   font-size: 1.1rem;
-  margin-top: 10px;
+  margin-top: 15px;
   transition: color 0.3s ease;
 }
 
@@ -211,10 +211,11 @@ footer {
   color: white;
 }
 
-/* RESPONSIVE */
+/* === RESPONSIVE DESIGN === */
 @media (max-width: 850px) {
-  section {
+  .section-box {
     max-width: 90%;
+    padding: 30px 20px;
   }
 
   header nav ul {
@@ -237,12 +238,20 @@ footer {
     margin-top: 10px;
   }
 
-  section {
-    padding: 30px 15px;
+  .section-box {
+    padding: 25px 15px;
   }
 
   form {
     max-width: 100%;
     padding: 20px 15px;
+  }
+
+  #hero h2 {
+    font-size: 1.6rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
   }
 }
