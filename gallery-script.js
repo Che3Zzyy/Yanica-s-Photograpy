@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = images[0].clientWidth + 15; // Adjust if gap differs
+      const slideWidth = images[0].clientWidth + 15; 
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
@@ -26,15 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateSlider);
     updateSlider();
 
-    // === Touch support for mobile ===
+    // === Touch support ===
     let startX = 0;
     let endX = 0;
 
-    slides.addEventListener('touchstart', e => {
+    slider.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
     });
 
-    slides.addEventListener('touchend', e => {
+    slider.addEventListener('touchend', e => {
       endX = e.changedTouches[0].clientX;
       handleSwipe();
     });
