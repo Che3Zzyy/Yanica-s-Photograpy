@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = slider.clientWidth;
+      const slideWidth = images[0].clientWidth + 15; 
+      // Added 15px gap to account for space between images (if gap is in CSS)
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
