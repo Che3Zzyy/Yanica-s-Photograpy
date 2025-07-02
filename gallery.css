@@ -108,7 +108,7 @@ header nav ul li a:hover {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 700px; /* CHANGED: Increased from 500px to 700px to fit wider images */
+  max-width: 900px; /* CHANGED: Increased from 500px to 700px to fit wider images */
   margin: 0 auto;
   display: flex;
   justify-content: center;
