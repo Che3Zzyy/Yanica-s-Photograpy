@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function updateSlider() {
-      const slideWidth = images[0].clientWidth + 20; // Includes margin between images
+      const slideWidth = slider.clientWidth;
       slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
