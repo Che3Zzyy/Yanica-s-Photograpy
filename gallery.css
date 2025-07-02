@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
 }
 
-/* === HEADER === */
+/* HEADER */
 header {
   position: relative;
   background: url("images/59a84d6f-30fa-4e57-9684-8653205a90ab.jpg") no-repeat center center/cover;
@@ -49,9 +49,7 @@ header::before {
   z-index: 0;
 }
 
-header h1,
-header img,
-header nav {
+header h1, header img, header nav {
   position: relative;
   z-index: 1;
 }
@@ -63,7 +61,6 @@ header .logo {
 
 header h1 {
   font-size: 2.5rem;
-  margin: 0;
 }
 
 header nav ul {
@@ -87,7 +84,7 @@ header nav ul li a:hover {
   color: var(--accent);
 }
 
-/* === SECTION BOX STYLING === */
+/* SECTION BOX */
 .section-box {
   background: #181818;
   padding: 40px 25px;
@@ -103,12 +100,12 @@ header nav ul li a:hover {
   font-size: 1.8rem;
 }
 
-/* === SLIDER STYLES === */
+/* SLIDER */
 .slider {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 100%;  /* CHANGED: Allow slider to stretch full width of section */
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -117,13 +114,13 @@ header nav ul li a:hover {
 .slides {
   display: flex;
   transition: transform 0.5s ease;
-  width: max-content; /* CHANGED: Allows slides to grow based on image width */
-  gap: 15px; /* Optional: space between images */
+  width: max-content;
+  gap: 15px;
 }
 
 .slides img {
   flex-shrink: 0;
-  width: 250px;  /* CHANGED: Fixed image width to display watermark better */
+  width: 250px;
   height: auto;
   max-height: 400px;
   object-fit: cover;
@@ -132,8 +129,7 @@ header nav ul li a:hover {
   box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-button.prev,
-button.next {
+button.prev, button.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -148,8 +144,7 @@ button.next {
   transition: background 0.3s ease;
 }
 
-button.prev:hover,
-button.next:hover {
+button.prev:hover, button.next:hover {
   background: #555;
 }
 
@@ -161,7 +156,7 @@ button.next {
   right: 10px;
 }
 
-/* === FOOTER === */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 20px;
@@ -169,43 +164,28 @@ footer {
   color: white;
 }
 
-/* === RESPONSIVE DESIGN === */
+/* RESPONSIVE */
 @media (max-width: 850px) {
   .section-box {
     max-width: 90%;
     padding: 30px 20px;
   }
 
-  header nav ul {
-    gap: 20px;
-  }
-
   .slides img {
-    width: 220px;  /* CHANGED: Slightly smaller for medium screens */
+    width: 220px;
     max-height: 300px;
   }
 }
 
 @media (max-width: 600px) {
-  header {
-    padding: 20px 10px;
-  }
-
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .section-box {
-    padding: 25px 15px;
-  }
-
   .slides img {
-    width: 180px;  /* CHANGED: Smaller for mobile screens */
+    width: 180px;
     max-height: 200px;
+  }
+
+  /* HIDE SLIDER BUTTONS ON MOBILE */
+  .slider button.prev,
+  .slider button.next {
+    display: none !important;
   }
 }
