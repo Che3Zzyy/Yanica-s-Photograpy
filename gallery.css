@@ -108,7 +108,7 @@ header nav ul li a:hover {
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px; /* CHANGED: Increased from 500px to 700px to fit wider images */
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -121,12 +121,11 @@ header nav ul li a:hover {
   width: 100%;
 }
 
-/* Updated photo height styling for better layout */
 .slides img {
   flex-shrink: 0;
-  width: 100%;
-  height: auto;           /* Keeps image proportions correct */
-  max-height: 400px;      /* Prevents images from getting too tall */
+  width: 250px;      /* CHANGED: Set fixed width to 250px to make images wider */
+  height: auto;
+  max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
   border: 4px solid white;
@@ -182,7 +181,8 @@ footer {
   }
 
   .slides img {
-    max-height: 300px; /* Slightly smaller max height for medium screens */
+    width: 220px;    /* CHANGED: Set width for medium screens */
+    max-height: 300px;
   }
 }
 
@@ -205,6 +205,7 @@ footer {
   }
 
   .slides img {
-    max-height: 200px; /* Smaller image height for mobile screens */
+    width: 180px;    /* CHANGED: Set width for smaller screens */
+    max-height: 200px;
   }
 }
